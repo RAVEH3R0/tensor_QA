@@ -19,24 +19,20 @@ def scrabble(word):
     :param word: Слово на входе
     :return: (points) Кол-во очков за букву в слове
     """
+    letters = {}
+    letters.update(dict.fromkeys(["а", "в", "е", "ё", "и", "н", "о", "р", "с", "т"], 1))
+    letters.update(dict.fromkeys(["д", "к", "л", "м", "п", "у"], 2))
+    letters.update(dict.fromkeys(["б", "г", "ь", "я"], 3))
+    letters.update(dict.fromkeys(["й", "ы"], 4))
+    letters.update(dict.fromkeys(["ж", "з", "х", "ц", "ч"], 5))
+    letters.update(dict.fromkeys(["ф", "ш", "э", "ю"], 8))
+    letters.update(dict.fromkeys(["щ"], 10))
+    letters.update(dict.fromkeys(["ъ"], 15))
+
     points = 0
-    for letter in word:
-        if letter in 'авеёинорст':
-            points += 1
-        elif letter in 'дклмпу':
-            points += 2
-        elif letter in 'бгья':
-            points += 3
-        elif letter in 'йы':
-            points += 4
-        elif letter in 'жзхцч':
-            points += 5
-        elif letter in 'фшэю':
-            points += 8
-        elif letter == 'щ':
-            points += 10
-        elif letter == 'ъ':
-            points += 15
+    for x in word:
+        points += letters.get(x)
+
     return points
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

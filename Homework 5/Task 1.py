@@ -16,10 +16,8 @@ def letter_stat(our_str):
     """
     letters_dict = {}
     for letter in our_str:
-        if letter in letters_dict:
-            letters_dict[letter] += 1
-        else:
-            letters_dict[letter] = 1
+        if letter not in letters_dict:
+            letters_dict[letter] = our_str.count(letter)
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

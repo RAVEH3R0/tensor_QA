@@ -33,20 +33,14 @@ class Segment:
         Определяет, пересекает ли отрезок ось абсцисс
         :return: True - пересекает, False - не пересекает
         """
-        if self.first_point[1] * self.second_point[1] <= 0:
-            return True
-        else:
-            return False
+        return self.first_point[1] * self.second_point[1] <= 0
 
     def y_axis_intersection(self):
         """
         Определяет, пересекает ли отрезок ось ординат
         :return: True - пересекает, False - не пересекает
         """
-        if self.first_point[0] * self.second_point[0] <= 0:
-            return True
-        else:
-            return False
+        return self.first_point[0] * self.second_point[0] <= 0
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

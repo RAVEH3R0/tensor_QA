@@ -54,14 +54,10 @@ class PersonInfo:
         1337*Возраст*суммарное кол-во вхождений трех наиболее часто встречающихся букв из списка подразделений
         :return: Новая зарплата
         """
-        sdiv = ''.join(self.subdivision).replace(' ', '')
-        letters = []
-        while sdiv != '':
-            letters.append(sdiv.count(sdiv[0]))
-            sdiv.replace(sdiv[0], '')
-        letters.sort()
-        new_salary = 1337 * self.age * sum(letters[-3:])
-        return new_salary
+        str_dep = "".join(self.subdivision)
+        letters_dict = {item: str_dep.count(item) for item in str_dep}
+        list_dep = sorted(list(letters_dict.values()), reverse=True)
+        return 1337 * self.age * sum(list_dep[:3])
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

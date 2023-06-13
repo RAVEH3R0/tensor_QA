@@ -41,7 +41,6 @@ def func_log(file_log="log.txt"):
     дату и время вызова в формате:
     имя_функции вызвана %d.%m %H:%M:%S
     :param file_log: путь до файла логов
-    :return:
     """
     def func_logic(func):
         def wrapper():
@@ -59,7 +58,6 @@ def func_log(file_log="log.txt"):
 def func1():
     """
     Функция 1
-    :return:
     """
     time.sleep(0.01)
 
@@ -68,7 +66,6 @@ def func1():
 def func2():
     """
     Функция 2
-    :return:
     """
     time.sleep(0.01)
 
